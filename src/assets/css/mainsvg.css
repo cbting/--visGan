@@ -1,0 +1,285 @@
+#model-vis-svg path {
+  fill: none;
+  stroke: rgb(175, 175, 175);
+  stroke-dasharray: 10, 2;
+  stroke-width: 2;
+}
+
+#model-vis-svg path.d-update-flow.d-activated {
+  stroke: rgb(105, 158, 255);
+  stroke-width: 4;
+}
+
+#model-vis-svg path.g-update-flow.g-activated {
+  stroke: rgb(186, 99, 207);
+  stroke-width: 4;
+}
+
+#model-vis-svg.playing path.d-activated,
+#model-vis-svg.playing path.g-activated {
+  animation: dash 3600s linear forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 36000px;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.panel-container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  width: 1442px;
+}
+
+#model-visualization-container {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-width: 0 1px 0 0;
+  min-height: 570px;
+  min-width: 740px;
+}
+
+/* 那个div位置 */
+#model-vis-content-container {
+  position: relative;
+  margin-left: 310px;
+  margin-top: -50px;
+}
+
+#model-vis-svg,
+#model-vis-div {
+  height: 570px;
+  position: absolute;
+  width: 740px;
+}
+
+#model-vis-svg {
+  pointer-events: none;
+}
+
+#model-vis-svg path {
+  fill: none;
+  stroke: rgb(175, 175, 175);
+  stroke-dasharray: 10, 2;
+  stroke-width: 2;
+}
+
+#model-vis-svg path.d-update-flow.d-activated {
+  stroke: rgb(105, 158, 255);
+  stroke-width: 4;
+}
+
+#model-vis-svg path.g-update-flow.g-activated {
+  stroke: rgb(186, 99, 207);
+  stroke-width: 4;
+}
+
+#model-vis-svg.playing path.d-activated,
+#model-vis-svg.playing path.g-activated {
+  animation: dash 3600s linear forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 36000px;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.model-component {
+  padding-top: 5px;
+  position: absolute;
+  text-align: center;
+  width: 110px;
+}
+
+.model-component svg {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  height: 50px;
+  width: 50px;
+}
+
+.model-component-model {
+  width: 140px;
+}
+
+.model-component-model svg {
+  border: 3px solid rgb(170, 170, 170);
+  height: 140px;
+  width: 140px;
+}
+
+.model-component-options {
+  height: 30px;
+  position: absolute;
+  width: 100px;
+}
+
+.component-label {
+  color: #000;
+  font-size: 13px;
+  line-height: 16px;
+  position: relative;
+}
+
+.model-component-model .component-label {
+  background-color: #f7f7f7;
+  padding-left: 15px;
+}
+
+.component-sub-label {
+  color: rgb(146, 146, 146);
+  font-size: 12px;
+  line-height: 12px;
+  margin-left: 30px;
+  margin-top: -12px;
+  position: relative;
+  text-align: left;
+}
+
+.component-dropdown-label {
+  color: rgb(121, 121, 121);
+  font-size: 11px;
+  text-align: left;
+}
+
+.component-loss-label {
+  color: rgb(121, 121, 121);
+  font-size: 12px;
+  line-height: 12px;
+  margin-top: 3px;
+  text-align: left;
+}
+
+.component-tooltip {
+  visibility: hidden;
+}
+
+.loss-bar {
+  height: 12px;
+  width: 0;
+}
+
+#d-loss-bar {
+  background-color: rgb(105, 158, 255);
+}
+
+#g-loss-bar {
+  background-color: rgb(186, 99, 207);
+}
+
+.model-component-model .checkbox-toggle {
+  display: inline-block;
+  position: relative;
+  right: 0;
+  top: 0;
+}
+
+#model-vis-div .mdl-button--icon {
+  height: 10px;
+  min-height: 10px;
+  min-width: 8px;
+  width: 8px;
+}
+
+#model-vis-div .material-icons {
+  font-size: 11px;
+}
+
+#model-vis-div paper-item {
+  --paper-item: {
+    font-size: 12px;
+  }
+  --paper-item-min-height: 12px;
+}
+
+#model-vis-div paper-dropdown-menu {
+  --paper-input-container: {
+    padding: 0;
+  }
+  --paper-input-container-color: rgb(207, 207, 207);
+  --paper-input-container-input: {
+    color: #666;
+    font-size: 12px;
+  }
+}
+
+svg {
+  font: 10px sans-serif;
+}
+
+.background path {
+  fill: none;
+  stroke: none;
+  stroke-width: 20px;
+  pointer-events: stroke;
+}
+
+.foreground path {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.axis .title {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.label {
+  -webkit-transition: fill 125ms linear;
+}
+
+.active .label:not(.inactive) {
+  font-weight: bold;
+}
+
+.label.inactive {
+  fill: #ccc;
+}
+
+.foreground path.inactive {
+  stroke: #ccc;
+  stroke-opacity: 0.5;
+  stroke-width: 1px;
+}
+
+#visualization-container {
+  min-height: 410px;
+  min-width: 300px;
+}
+.panel-item {
+  padding: 5px 10px;
+}
+
+.panel-title {
+  align-items: center;
+  color: #555;
+  display: flex;
+  margin-bottom: 5px;
+  font-size: 15px;
+  /* height: 32px; */
+  text-transform: uppercase;
+}
+#vis-content-container {
+  position: relative;
+  left: -200px;
+  top: -30px;
+}
